@@ -20,8 +20,8 @@ feature 'westeros api' do
     expect(page).to have_content("7 members")
 
     within(first('.member')) do
-      expect(page).to have_content('.name')
-      expect(page).to have_content('.id')
+      expect(page).to have_css('.name')
+      expect(page).to have_css('.id')
     end
   end
-end 
+end
