@@ -3,6 +3,10 @@ class MemberFacade
     @house = house
   end
 
+  def member_count
+    members.count
+  end
+
   def members
     response = Faraday.get("http://westerosapi.herokuapp.com/api/v1/house/#{@house}?&api_key=egg")
     result = JSON.parse(response.body, symbolize_names: true)

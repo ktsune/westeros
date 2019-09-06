@@ -17,7 +17,8 @@ feature 'westeros api' do
     click_on "Get Members"
 
     expect(current_path).to eq("/search")
-    expect(page).to have_content("7 members")
+    # expect(page).to have_content("7 members")
+    expect(page).to have_css(".member", count: 7)
 
     within(first('.member')) do
       expect(page).to have_css('.name')
