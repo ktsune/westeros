@@ -1,1 +1,12 @@
-<% form_tag '/search',  %>
+<%= form_tag '/search', method: :get do %>
+  <%= select_tag :houses, options_for_select(
+    [
+     ['Stark', 'stark'],
+     ['Lannister', 'lannister'],
+     ['Targaryen', 'targaryen'],
+     ['Tyrell', 'tyrell'],
+     ['Greyjoy', 'greyjoy']
+   ]
+  )%>
+  <%= submit_tag 'Get Members' %>
+<% end %>

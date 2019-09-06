@@ -4,11 +4,8 @@ class MemberFacade
     result = JSON.parse(response.body, symbolize_names: true)
 
     # => to get to members: result[:data][0][:attributes][:members]
-    result[:data].map do |data|
-      data[:attributes][:members].map do |member_data|
-        # binding.pry
+    result[:data][0][:attributes][:members].map do |member_data|
         House.new(member_data)
       end
-    end
   end
 end
